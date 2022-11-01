@@ -3,9 +3,13 @@ import { Link, Route, Routes } from "react-router-dom";
 import { SuperHeroesPage } from "./components/Superheroes.page";
 import { RQSuperHeroesPage } from "./components/RQSuperheroes.page";
 import { HomePage } from "./components/Home.page";
+import {QueryClientProvider, QueryClient } from "@tanstack/react-query"
+
+const queryClient = new QueryClient()
 
 function App() {
     return (
+        <QueryClientProvider client={queryClient}>
         <div className="App">
             <div>
                 <nav>
@@ -36,6 +40,7 @@ function App() {
                 </Routes>
             </div>
         </div>
+        </QueryClientProvider>
     );
 }
 
