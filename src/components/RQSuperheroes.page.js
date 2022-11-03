@@ -9,7 +9,9 @@ export const RQSuperHeroesPage = () => {
   const {isLoading, data, isError, error, isFetching} = useQuery(['super-heroes'], fetchSuperHeroes,{
     staleTime:30000,
     refetchOnMount:true, //default
-    refetchOnWindowFocus: true //default
+    refetchOnWindowFocus: true, //default
+    refetchInterval:2000,  //For polling i.e. fetching api data at regular interval, the process pauses if window loses focus
+    refetchIntervalInBackground: true   //fetches data in regular interval even if window loses focus
   })
   console.log(isLoading, isFetching)
 
