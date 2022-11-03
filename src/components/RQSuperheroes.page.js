@@ -24,8 +24,13 @@ export const RQSuperHeroesPage = () => {
             // refetchInterval:2000,  //For polling i.e. fetching api data at regular interval, the process pauses if window loses focus
             // refetchIntervalInBackground: true   //fetches data in regular interval even if window loses focus
             // enabled: false, //disables api call on component mount
-            onSuccess: onSuccess,
-            onError: onError,
+            // onSuccess: onSuccess, //Callback for success on data fetching
+            // onError: onError, //callback for data fetching error
+
+            select: (data) => {
+                const superheroesNames = data.data.map((hero) => hero.name);
+                return superheroesNames;
+            }, //change destructured data into an array of superheroes names
         }
     );
 
@@ -41,8 +46,8 @@ export const RQSuperHeroesPage = () => {
         <div>
             <h2>RQ Super Heroes Page</h2>
             <button onClick={refetch}>Fetch Heroes</button>
-            {data?.data.map((hero) => {
-                return <div key={hero.id}>{hero.name}</div>;
+            {data.map((heroName) => {
+                return <div key={heroName}>{heroName}</div>;
             })}
         </div>
     );
