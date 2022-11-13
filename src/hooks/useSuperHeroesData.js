@@ -14,7 +14,6 @@ export const useSuperHeroesData = (onSuccess, onError) => {
         // enabled: false, //disables api call on component mount
         // onSuccess: onSuccess, //Callback for success on data fetching
         // onError: onError, //callback for data fetching error
-
         // select: (data) => {
         //     const superheroesNames = data.data.map((hero) => hero.name);
         //     return superheroesNames;
