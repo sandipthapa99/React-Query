@@ -15,9 +15,9 @@ export const useSuperHeroesData = (onSuccess, onError) => {
         // onSuccess: onSuccess, //Callback for success on data fetching
         // onError: onError, //callback for data fetching error
 
-        select: (data) => {
-            const superheroesNames = data.data.map((hero) => hero.name);
-            return superheroesNames;
-        }, //change destructured data into an array of superheroes names
+        // select: (data) => {
+        //     const superheroesNames = data.data.map((hero) => hero.name);
+        //     return superheroesNames;
+        // }, //change destructured data into an array of superheroes names
     });
 };
